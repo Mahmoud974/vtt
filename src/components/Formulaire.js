@@ -1,25 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 const Formulaire = props => {
-  let baliseI = document.querySelector("i");
-  const [direction, setDirection] = useState("down");
+  // let baliseI = document.querySelector("i");
+  // const [direction, setDirection] = useState("down");
   const [hiddenForm, setHiddenForm] = useState("d-none");
   const [arrow, setArrow] = useState(
-    "arrow fas fa-chevron-down text-light display-6 my-2 d-flex justify-content-end"
+    " arrow fas fa-chevron-down text-light display-6 my-2 d-flex justify-content-end"
   );
   const [hiddenAgree, sethiddenAgree] = useState(true);
 
-  const afficheFormulaire = () => {
-    setHiddenForm("d-block");
-    setArrow(
-      "arrow fas fa-chevron-up text-light display-6 my-2 d-flex justify-content-end"
-    );
-    console.log("Function correctement");
+  const afficheFormulaire = e => {
+    console.log(e.target);
+
+    if (e.isTrusted) {
+      setHiddenForm("d-block");
+      setArrow(
+        "arrow fas fa-chevron-up text-light display-6 my-2 d-flex justify-content-end"
+      );
+      console.log("Function correctement");
+    } else if (e.target === arrow) {
+      setHiddenForm("d-none");
+      setArrow(
+        "arrow fas fa-chevron-down text-light display-6 my-2 d-flex justify-content-end"
+      );
+      console.log("functionnelle");
+    }
   };
 
   if (props.ok) {
     return (
-      <div className="w-50 myForm ">
+      <div className="w-auto myForm ">
         <h2 className="text-uppercase text-light">
           register and <br /> participate
           <br /> in the great mountain
@@ -76,13 +86,9 @@ const Formulaire = props => {
     );
   } else {
     return (
-      <div className="  myForm  ">
-        <h2 className="text-uppercase text-light text-right">
-          subscribe to our newsletter
-          <br /> and find out the dates, awards and
-          <br /> modalities of the great race.
-        </h2>
-        <form className="w-50">
+      <div className=" myFoot myForm  ">
+        <h2 className="text-uppercase text-light text-right">{props.title}</h2>
+        <form className="w-auto">
           <div className="my-3  ">
             <input
               type="email"
@@ -99,11 +105,6 @@ const Formulaire = props => {
           >
             sign up
           </button>
-          <p className="rightForm  text-light text-right">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod, sed
-            laboriosam. Asperiores, expedita tenetur. Eligendi laborum natus
-            numquam fugiat doloribus sit autem quae est quidem?
-          </p>
         </form>
       </div>
     );

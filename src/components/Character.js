@@ -2,9 +2,9 @@ import React from "react";
 
 const Character = () => {
   return (
-    <div className="text-center">
-      <img src=" ./img/leo.png" alt="" />
-      <div className="d-flex mx-auto justify-content-center">
+    <div className="myCharacter text-center">
+      <img src=" ./img/leo.png" className="leonard img-responsive" alt="" />
+      <div className="leoBlock d-flex mx-auto justify-content-center">
         <h2
           className="outlineM display-2  fw-bold text-light "
           style={{ position: "relative", marginTop: "-80px" }}

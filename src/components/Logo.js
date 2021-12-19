@@ -2,13 +2,16 @@ import React from "react";
 
 const Logo = props => {
   return (
-    <div>
-      <p className="text-light text-center mt-5" style={{ fontSize: "22px" }}>
+    <div className="text-center">
+      <p
+        className="text-light  mt-5"
+        style={{ fontSize: "22px", marginBottom: 0 }}
+      >
         {props.what}
       </p>
-      <h4 className="text-uppercase text-center display-5 fw-bolder">
+      <h4 className="text-uppercase mb-5 display-5 fw-bolder">
         MOUNTAIN <br />
-        <span className="">biking</span>
+        <span>biking</span>
       </h4>
     </div>
   );

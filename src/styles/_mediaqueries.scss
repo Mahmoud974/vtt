@@ -1,0 +1,53 @@
+$small: 576px;
+$medium: 768px;
+$large: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+@mixin displayBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+  text-align: center;
+}
+
+@media all and (max-width: $small) {
+  .myNav {
+    display: none;
+  }
+  body {
+    text-align: center;
+    .vttAcceuil {
+      display: none;
+    }
+    .leoBlock {
+      text-align: center;
+    }
+    .myParag {
+      display: flex;
+      flex-direction: column;
+    }
+    .myCharacter {
+      @include displayBlock;
+      text-align: center;
+      .leoBlock {
+        @include displayBlock;
+      }
+      .leonard {
+        @include displayBlock;
+        display: block;
+        width: auto;
+      }
+    }
+
+    .myFooter {
+      @include displayBlock;
+
+      .myFoot {
+        margin-top: 70px;
+      }
+    }
+  }
+}

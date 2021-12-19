@@ -7,8 +7,8 @@ const WhatisM = () => {
     <div className="container">
       <Logo what={what} />
       <div className="row">
-        <div className="d-flex">
-          <p className="w-50 text-light">
+        <div className="myParag d-flex">
+          <p className=" text-center text-light">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
             doloribus magni laboriosam dolor. Hic saepe debitis dolor placeat
             <br />
@@ -19,7 +19,7 @@ const WhatisM = () => {
             harum accusamus voluptatibus voluptatum. Repellendus, praesentium.
           </p>
 
-          <p className="w-50 text-light">
+          <p className="text-center text-light">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi
             doloribus magni laboriosam dolor. Hic saepe debitis dolor placeat
             earum commodi! Quasi saepe voluptates tempora officiis qui a sit
@@ -38,10 +38,15 @@ const WhatisM = () => {
                 All cycling
                 <br /> equipment with
               </h2>
-              <p className="outlineM text-light display-2">20%</p>
+              <p
+                className="outlineM text-light display-2"
+                style={{ marginBottom: 0 }}
+              >
+                20%
+              </p>
               <p className="text-light fw-bold">DISCOUNT</p>
             </div>
-            <div>
+            <div className="vttAcceuil">
               <img src="./img/geantVtt.png" alt="faire du velo" />
             </div>
           </div>
